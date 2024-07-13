@@ -1,5 +1,8 @@
 const Hapi = require('@hapi/hapi')
+const path = require('path')
+const buatRoutes = require('./routes/routes')
 
+const routes = buatRoutes(__dirname)
 
 const init = async () => {
 
@@ -8,12 +11,9 @@ const init = async () => {
         port: 5000
     })
 
-    server.route([
-        {
-            path: '/register',
-            method: 'GET',
-        }
-    ])
+    await server.register(require('@hapi/inert'))
+
+    server.route(routes)
 
     await server.start()
     console.log(`Server started on ${server.info.uri}`)
