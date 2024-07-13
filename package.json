@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@hapi/hapi": "^21.3.10"
+    "@hapi/hapi": "^21.3.10",
+    "@hapi/inert": "^7.1.0",
+    "mongodb": "^6.8.0"
   }
 }
