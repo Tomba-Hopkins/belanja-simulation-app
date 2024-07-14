@@ -18,7 +18,7 @@ const init = async () => {
     server.route(routes)
 
     await server.start()
-    console.log(`Server started on ${server.info.uri}`)
+    console.log(`Server started on ${server.info.uri}/login`)
     
 }
 

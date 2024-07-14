@@ -54,9 +54,38 @@ const getLogin = (baseDir) => {
     }
 }
 
+const userLogin =  async (req, h) => {
+
+    const { username, password } = req.payload
+
+    const db = await connectDB()
+
+    const dbUser = db.collection('user')
+
+    const user = dbUser.findOne({
+        username: username,
+        password: password
+    })
+
+    if(user) {
+        return h.response({
+            status: 'success',
+            message: 'login successful'
+        }).code(200)
+    }
+
+    return h.response({
+        status: 'fail',
+        message: 'GADA'
+    }).code(404)
+    
+    
+}
+
 
 module.exports = { 
     getRegister, 
     createUser,
-    getLogin
+    getLogin,
+    userLogin
 }
