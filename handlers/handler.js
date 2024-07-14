@@ -4,7 +4,7 @@ const connectDB = require('../config/db')
 const getRegister = (basedir) => {
     return (req, h) => {
         const filepath = path.join(basedir, 'public', 'views','register.html');
-        console.log(filepath);
+        // console.log(filepath);
         return h.file(filepath);
     }
 }
@@ -46,5 +46,17 @@ const createUser =  async (req, h) => {
     
 }
 
+const getLogin = (baseDir) => {
+    return (req, h) => {
+        const filepath = path.join(baseDir, 'public', 'views', 'login.html')
+        // console.log(filepath)
+        return h.file(filepath)
+    }
+}
 
-module.exports = { getRegister, createUser }
+
+module.exports = { 
+    getRegister, 
+    createUser,
+    getLogin
+}
