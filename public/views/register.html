@@ -6,6 +6,64 @@
     <title>Register</title>
 </head>
 <body>
+    <form action="/register" method="post">
+
+        <div class="inputan">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="inputan">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="inputan">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit">Register</button>
+        
+    </form>
+
+
+<script>
+
+    document.querySelector('form').addEventListener('submit', async(e) => {
+        e.preventDefault()
+
+        const form = e.target
+        const formData = new FormData(form)
+        const data = Object.fromEntries(formData.entries())
+
+        try {
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers : {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+
+            const result = await response.json()
+            console.log(result)
+
+            if (response.ok){
+                alert(result.message)
+            } else {
+                alert(`Error : ${result.message}`)
+            }
+            
+            
+        } catch(err) {
+            console.log('Ada error: ', err)
+            alert('Gagal nambah data')
+        }
+
+
+
+    })
     
+</script>
 </body>
 </html>

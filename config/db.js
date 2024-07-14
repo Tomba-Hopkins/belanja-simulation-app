@@ -10,7 +10,7 @@ const connectDB = async () => {
         await client.connect()
         console.log(`Connect successful`)
         let db = client.db('belanja-app')
-
+        
         return db
     }catch(err) {
         console.error('Error keknya: ', err)
