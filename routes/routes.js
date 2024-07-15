@@ -2,7 +2,8 @@ const {
     getRegister,
     createUser,
     getLogin,
-    userLogin
+    userLogin,
+    getDashboard
 } = require('../handlers/handler')
 
 
@@ -26,7 +27,13 @@ const routes = (dir) => [
     {
         path: '/login',
         method: 'POST',
-        handler: userLogin
+        handler: userLogin,
+    },
+    {
+        path: '/dashboard',
+        method: 'GET',
+        handler: getDashboard
+        
     }
     
 ]

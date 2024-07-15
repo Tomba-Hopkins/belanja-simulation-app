@@ -1,6 +1,7 @@
 const path = require('path')
 const connectDB = require('../config/db')
 
+
 const getRegister = (basedir) => {
     return (req, h) => {
         const filepath = path.join(basedir, 'public', 'views','register.html');
@@ -54,7 +55,7 @@ const getLogin = (baseDir) => {
     }
 }
 
-const userLogin =  async (req, h) => {
+const userLogin = async (req, h) => {
 
     const { username, password } = req.payload
 
@@ -62,30 +63,51 @@ const userLogin =  async (req, h) => {
 
     const dbUser = db.collection('user')
 
-    const user = dbUser.findOne({
-        username: username,
-        password: password
+    const user = await dbUser.findOne({
+        username: username
     })
 
-    if(user) {
+    console.log(user)
+
+    
+    if(!user){
         return h.response({
-            status: 'success',
-            message: 'login successful'
-        }).code(200)
+            status: 'fail',
+            message: 'MAMPUS SALAH'
+        }).code(404)
     }
 
+    const matching = password === user.password
+    console.log(password, user.password)
+    if(!matching){
+        return h.response({
+            status: 'fail',
+            message: 'MAMPUS SALAH'
+        }).code(404)
+    }
+
+
     return h.response({
-        status: 'fail',
-        message: 'GADA'
-    }).code(404)
-    
+        status: 'success',
+        message: 'berhasil coy',
+        user,
+        redirect: '/dashboard'
+    }).code(200)
+
     
 }
 
+
+const getDashboard = (req, h) => {
+    const { id, name, email} = req.auth.credentials
+
+    return `<h1>Hello ${name} with id: ${id} and email ${email}`
+}
 
 module.exports = { 
     getRegister, 
     createUser,
     getLogin,
-    userLogin
+    userLogin,
+    getDashboard
 }

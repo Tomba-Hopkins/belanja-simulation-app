@@ -2,8 +2,10 @@ const Hapi = require('@hapi/hapi')
 const path = require('path')
 const buatRoutes = require('./routes/routes')
 const connectDB = require('./config/db')
+const HapiCookie = require('@hapi/cookie')
 
 const routes = buatRoutes(__dirname)
+
 
 
 const init = async () => {
@@ -14,6 +16,8 @@ const init = async () => {
     })
 
     await server.register(require('@hapi/inert'))
+
+
 
     server.route(routes)
 
