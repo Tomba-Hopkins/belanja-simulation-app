@@ -103,10 +103,16 @@ const getDashboard = (dir) => (req, h) => {
     return h.file(filepath)
 }
 
+
+const robotsTxt = (dir) => {
+    return path.join(dir, 'robots.txt')
+}
+
 module.exports = { 
     getRegister, 
     createUser,
     getLogin,
     userLogin,
-    getDashboard
+    getDashboard,
+    robotsTxt
 }

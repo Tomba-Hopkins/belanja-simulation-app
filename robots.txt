@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /nasgor-telur-dadar
+Allow: /

@@ -3,7 +3,8 @@ const {
     createUser,
     getLogin,
     userLogin,
-    getDashboard
+    getDashboard,
+    robotsTxt
 } = require('../handlers/handler')
 
 
@@ -34,6 +35,13 @@ const routes = (dir) => [
         method: 'GET',
         handler: getDashboard(dir)
         
+    },
+    {
+        method: 'GET',
+        path: '/robots.txt',
+        handler: {
+            file: robotsTxt(dir)
+        }
     }
     
 ]
