@@ -6,11 +6,11 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="/login" method="post">
+    <form id="loginForm">
 
         <div class="inputan">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
         </div>
 
         <div class="inputan">
@@ -22,40 +22,43 @@
         
     </form>
 
-
     <div class="code">
-        
+        <br>
+        <code>
+            const matching = password === password
+        </code>
+        <h3>Instead</h3>
+        <code>
+            const matching = password === user.password
+        </code>
     </div>
 
-    <!-- my scar OR true ?🦖 -->
+    <!-- what are you looking for ?🦖 -->
 
 <script>
-    
-    document.querySelector('form').addEventListener('submit', async (e) => {
-        e.preventDefault()
+    document.querySelector('#loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        const email = document.querySelector('#email').value
-        const password = document.querySelector('#password').value
+        const username = document.querySelector('#username').value;
+        const password = document.querySelector('#password').value;
 
         const response = await fetch('/fake-login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email, password})
-        })
+            body: JSON.stringify({ username, password })
+        });
 
-        const result = await response.json()
+        const result = await response.json();
 
-        if(result.status == 'success'){
-            alert(result.message)
-            window.location.href = result.redirect
+        if (result.status == 'success') {
+            alert(result.message);
+            window.location.href = result.redirect;
         } else {
-            alert(result.message)
+            alert(result.message);
         }
-
-    })
-    
+    });
 </script>
 </body>
 </html>

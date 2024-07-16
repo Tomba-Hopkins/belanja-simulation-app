@@ -7,7 +7,6 @@ const HapiCookie = require('@hapi/cookie')
 const routes = buatRoutes(__dirname)
 
 
-
 const init = async () => {
 
     const server = Hapi.server({
@@ -16,8 +15,6 @@ const init = async () => {
     })
 
     await server.register(require('@hapi/inert'))
-
-
 
     server.route(routes)
 

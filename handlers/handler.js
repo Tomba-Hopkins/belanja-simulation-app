@@ -54,6 +54,7 @@ const getLogin = (baseDir) => {
         return h.file(filepath)
     }
 }
+
 const getFakeLogin = (baseDir) => {
     return (req, h) => {
         const filepath = path.join(baseDir, 'public', 'views', 'fake-login.html')
@@ -72,8 +73,6 @@ const userLogin = async (req, h) => {
     const user = await dbUser.findOne({
         username: username
     })
-
-    console.log(user)
 
     
     if(!user){
@@ -103,12 +102,34 @@ const userLogin = async (req, h) => {
     
 }
 
+const userFakeLogin = async (req, h) => {
+
+    const { password } = req.payload
+
+    const user = password === password
+
+    if(!user){
+        return h.response({
+            status: 'fail',
+            message: 'MAMPUS SALAH',
+            redirect: '/fake-login'
+        }).code(404)
+    }
+
+    return h.response({
+        status: 'success',
+        message: 'berhasil coy',
+        redirect: '/fake-dashboard'
+    }).code(200)
+
+    
+}
+
 
 const getDashboard = (dir) => (req, h) => {
     const filepath = path.join(dir, 'public', 'views', 'dashboard.html')
     return h.file(filepath)
 }
-
 
 const robotsTxt = (dir) => {
     return path.join(dir, 'robots.txt')
@@ -120,6 +141,7 @@ module.exports = {
     getLogin,
     getFakeLogin,
     userLogin,
+    userFakeLogin,
     getDashboard,
     robotsTxt
 }
