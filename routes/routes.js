@@ -2,6 +2,7 @@ const {
     getRegister,
     createUser,
     getLogin,
+    getFakeLogin,
     userLogin,
     getDashboard,
     robotsTxt
@@ -24,6 +25,11 @@ const routes = (dir) => [
         method: 'GET',
         path: '/login',
         handler: getLogin(dir)
+    },
+    {
+        method: 'GET',
+        path: '/fake-login',
+        handler: getFakeLogin(dir)
     },
     {
         path: '/login',

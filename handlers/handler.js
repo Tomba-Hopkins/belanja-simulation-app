@@ -54,6 +54,12 @@ const getLogin = (baseDir) => {
         return h.file(filepath)
     }
 }
+const getFakeLogin = (baseDir) => {
+    return (req, h) => {
+        const filepath = path.join(baseDir, 'public', 'views', 'fake-login.html')
+        return h.file(filepath)
+    }
+}
 
 const userLogin = async (req, h) => {
 
@@ -112,6 +118,7 @@ module.exports = {
     getRegister, 
     createUser,
     getLogin,
+    getFakeLogin,
     userLogin,
     getDashboard,
     robotsTxt
