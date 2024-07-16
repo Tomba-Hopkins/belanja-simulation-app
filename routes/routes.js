@@ -32,7 +32,7 @@ const routes = (dir) => [
     {
         path: '/dashboard',
         method: 'GET',
-        handler: getDashboard
+        handler: getDashboard(dir)
         
     }
     

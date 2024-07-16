@@ -76,7 +76,7 @@ const userLogin = async (req, h) => {
             message: 'MAMPUS SALAH'
         }).code(404)
     }
-
+ 
     const matching = password === user.password
     console.log(password, user.password)
     if(!matching){
@@ -98,10 +98,9 @@ const userLogin = async (req, h) => {
 }
 
 
-const getDashboard = (req, h) => {
-    const { id, name, email} = req.auth.credentials
-
-    return `<h1>Hello ${name} with id: ${id} and email ${email}`
+const getDashboard = (dir) => (req, h) => {
+    const filepath = path.join(dir, 'public', 'views', 'dashboard.html')
+    return h.file(filepath)
 }
 
 module.exports = { 
