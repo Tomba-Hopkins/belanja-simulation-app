@@ -139,13 +139,16 @@ const getProfileByID =  async (req, h) => {
 
     const { id } = req.params
 
+    console.log(id)
+
     const db = await connectDB()
     const idCard = db.collection('idCard')
     
     const user = await idCard.findOne({
-        id: id
+        id: Number(id)
     })
 
+    console.log(user)
 
     if(user) {
         return h.response({
