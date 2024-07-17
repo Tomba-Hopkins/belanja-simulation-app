@@ -2,7 +2,6 @@ const Hapi = require('@hapi/hapi')
 const path = require('path')
 const buatRoutes = require('./routes/routes')
 const connectDB = require('./config/db')
-const HapiCookie = require('@hapi/cookie')
 
 const routes = buatRoutes(__dirname)
 

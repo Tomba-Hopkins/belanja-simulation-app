@@ -7,6 +7,7 @@ const {
     userFakeLogin,
     getDashboard,
     robotsTxt,
+    getProfileByID
 } = require('../handlers/handler')
 
 
@@ -54,6 +55,11 @@ const routes = (dir) => [
         handler: {
             file: robotsTxt(dir)
         }
+    },
+    {
+        method: 'GET',
+        path: '/profile/{id}',
+        handler: getProfileByID
     }
     
 ]

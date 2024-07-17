@@ -135,6 +135,34 @@ const robotsTxt = (dir) => {
     return path.join(dir, 'robots.txt')
 }
 
+const getProfileByID =  async (req, h) => {
+
+    const { id } = req.params
+
+    const db = await connectDB()
+    const idCard = db.collection('idCard')
+    
+    const user = await idCard.findOne({
+        id: id
+    })
+
+
+    if(user) {
+        return h.response({
+            status: 'success',
+            message: 'ada',
+            id: id,
+            user
+        }).code(200)
+    }
+
+    return h.response({
+        status: 'fail',
+        message: 'gada'
+    }).code(404)
+    
+}
+
 module.exports = { 
     getRegister, 
     createUser,
@@ -143,5 +171,6 @@ module.exports = {
     userLogin,
     userFakeLogin,
     getDashboard,
-    robotsTxt
+    robotsTxt,
+    getProfileByID
 }
