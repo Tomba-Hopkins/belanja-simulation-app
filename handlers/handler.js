@@ -139,8 +139,6 @@ const getProfileByID =  async (req, h) => {
 
     const { id } = req.params
 
-    console.log(id)
-
     const db = await connectDB()
     const idCard = db.collection('idCard')
     
@@ -148,10 +146,8 @@ const getProfileByID =  async (req, h) => {
         id: Number(id)
     })
 
-    console.log(user)
-
     if(user) {
-        return h.response({
+        return h.view('profile',{
             status: 'success',
             message: 'ada',
             id: id,
@@ -159,7 +155,7 @@ const getProfileByID =  async (req, h) => {
         }).code(200)
     }
 
-    return h.response({
+    return h.view('notfound',{
         status: 'fail',
         message: 'gada'
     }).code(404)

@@ -13,7 +13,17 @@ const init = async () => {
         port: 5000
     })
 
+    
     await server.register(require('@hapi/inert'))
+    await server.register(require('@hapi/vision'))
+
+    server.views({
+        engines: {
+            ejs: require('ejs')
+        },
+        relativeTo: __dirname,
+        path: 'public/views'
+    })
 
     server.route(routes)
 
