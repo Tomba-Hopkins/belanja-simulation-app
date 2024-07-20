@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../style/output.css">
 </head>
 <body>
-    <form action="/login" method="post">
+    
+    <div class="w-screen h-screen p-9 bg-slate-300 flex items-center justify-center">
+        <form action="/login" method="post" class="w-full mx-auto bg-sky-500 p-6 rounded-xl h-1/2">
 
-        <div class="inputan">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="inputan">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-
-        <button type="submit">Login</button>
-        
-    </form>
+            <div class="flex">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="inputan">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <button type="submit">Login</button>
+            
+        </form>
+    </div>
 
 <script>
     
