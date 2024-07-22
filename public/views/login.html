@@ -12,19 +12,19 @@
     <div class="w-screen h-screen p-9 bg-slate-700 flex items-center justify-center flex-col">
 
         <h1 class="my-9 text-4xl font-bold text-white"><span class="text-sky-500">Login</span> Page</h1>
-        <form action="/login" method="post" class="w-full md:w-1/4 mx-auto bg-sky-500 p-6 rounded-xl h-1/2 text-slate-800 font-bold text-center">
+        <form action="/login" method="post" class="w-full md:w-1/4 mx-auto bg-sky-500 p-6 rounded-xl h-1/2 text-slate-700 font-bold text-center">
 
             <div class="flex flex-col">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required class="rounded focus:outline-sky-300 font-thin font-mono">
             </div>
     
             <div class="flex flex-col my-6">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required class="rounded focus:outline-sky-300 font-mono">
             </div>
     
-            <button type="submit" class="bg-white p-3 w-1/2 rounded">Login</button>
+            <button type="submit" class="bg-white p-3 w-1/2 rounded hover:bg-sky-300 hover:text-white duration-200 active:bg-sky-800">Login</button>
             
         </form>
     </div>
