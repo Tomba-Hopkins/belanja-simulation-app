@@ -14,6 +14,34 @@
         body{ 
             font-family: 'Open Sans', sans-serif;
         }
+        .merem {
+            animation: ilangdek 1s linear forwards;
+        }
+
+        .buka {
+            animation: munculdek 1s linear forwards;
+        }
+
+        @keyframes ilangdek {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+        @keyframes munculdek {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     </style>
     
 </head>
@@ -78,6 +106,31 @@
         
     })
     
+
+
+    const pw = document.querySelector('#password')
+    const pupils = document.querySelectorAll('.pupil')
+    pw.addEventListener('focus', () => {
+        pupils.forEach((pupil) => {
+            pupil.classList.add('merem')
+            pupil.classList.remove('buka')
+        })
+    })
+    pw.addEventListener('blur', () => {
+        pupils.forEach((pupil) => {
+            pupil.classList.remove('merem')
+            pupil.classList.add('buka')
+
+            setTimeout(() => {
+                pupil.classList.remove('buka')
+            }, 2000)
+        })
+    })
+
+    // if(pw.focus) {
+    //         pupil.classList.add('merem')
+
+    // }
 </script>
 </body>
 </html>
