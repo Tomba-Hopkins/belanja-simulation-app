@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="../style/output.css">
 </head>
 <body>
-    <form action="/register" method="post">
 
-        <div class="inputan">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-        </div>
-        <div class="inputan">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
+    <div class="p-9 bg-slate-700 flex items-center justify-center flex-col">
 
-        <div class="inputan">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+        <div class="eyes mx-auto w-full p-5 h-1/4 flex justify-between">
+            <div class="right-eyes w-1/2 mr-5 rounded-lg bg-white flex justify-center items-center">
+                <div class="pupil h-10 w-10 bg-sky-500 rounded-full animate-bounce"></div>
+            </div>
+            <div class="right-eyes w-1/2 rounded-lg bg-white flex justify-center items-center">
+                <div class="pupil h-10 w-10 bg-sky-500 rounded-full animate-bounce"></div>
+            </div>
         </div>
 
-        <button type="submit">Register</button>
-        
-    </form>
+        <h1 class="my-9 text-3xl font-bold text-white"><span class="text-sky-500">Register</span> Page</h1>
+
+        <form action="/register" method="post" class="w-full md:w-1/4 mx-auto bg-sky-500 p-6 rounded-xl h-1/2 text-slate-700 font-bold text-center">
+
+            <div class="flex flex-col">
+                <label for="name" class="text-white">Name</label>
+                <input type="email" id="name" name="name" required class="rounded focus:outline-sky-300 font-thin font-mono">
+            </div>
+
+            <div class="flex flex-col my-6">
+                <label for="email" class="text-white">Email</label>
+                <input type="email" id="email" name="email" required class="rounded focus:outline-sky-300 font-thin font-mono">
+            </div>
+    
+            <div class="flex flex-col my-6">
+                <label for="password" class="text-white">Password</label>
+                <input type="password" id="password" name="password" required class="rounded focus:outline-sky-300 font-mono">
+            </div>
+    
+            <button type="submit" class="bg-white p-3 w-1/2 rounded hover:bg-sky-300 hover:text-white duration-200 active:bg-sky-800 text-sky-500">Login</button>
+            
+        </form>
+    </div>
 
 
 <script>
