@@ -60,6 +60,24 @@ const routes = (dir) => [
         method: 'GET',
         path: '/profile/{id}',
         handler: getProfileByID
+    },
+    {
+        method: 'GET',
+        path: '/style/{file*}',
+        handler: {
+            directory: {
+                path: './public/style'
+            }
+        }
+    },
+    {
+        method: 'GET',
+        path: '/img/{file*}',
+        handler: {
+            directory: {
+                path: './public/img'
+            }
+        }
     }
     
 ]
