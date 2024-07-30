@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+
+    <!-- <link rel="stylesheet" href="../style/output.css"> -->
+    <link rel="stylesheet" href="/style/output.css">
 </head>
-<body>
+<body class="bg-slate-800 text-slate-100 p-2">
     
-    <h1>Profile</h1>
-    <ul>
+    <h1 class="text-center text-4xl mt-4 font-bold shadow-xl">Profile</h1>
+    <ul class="w-1/2 p-6 text-left bg-slate-700 mx-auto my-5 rounded-xl border-slate-300 border-2">
         <li>ID: <%= id %></li>
         <li>Name: <%= user.name %></li>
         <li>NIK: <%= user.nik %></li>
     </ul>
 
     <% if (id == 2) { %>
-     <h2>Harga nasgor 50k</h2>
+     <h2 class="text-center">Harga nasgor 50k</h2>
     <% } %>
 
     <% if (id == 3) { %>
-     <h3 style="color: whitesmoke;">di id 50 keknya</h3>
+     <h3 class="text-slate-800 text-center text-xs">di id 50 keknya</h3>
     <% } %>
 
     <% if (id == 50) { %>
      <h3 style="text-align: center">U R so cool bro congrats</h3>
-     <p>Oops</p>
+     <p class="text-center font-bold">Oops</p>
     <% } %>
     
 </body>
