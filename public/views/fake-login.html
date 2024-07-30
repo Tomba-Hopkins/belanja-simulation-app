@@ -61,7 +61,7 @@
 
             <div class="flex flex-col">
                 <label for="email" class="text-white">Email</label>
-                <input type="email" id="email" name="email" required class="rounded focus:outline-sky-300 font-thin font-mono">
+                <input type="email" id="username" name="email" required class="rounded focus:outline-sky-300 font-thin font-mono">
             </div>
     
             <div class="flex flex-col my-6">
@@ -94,6 +94,8 @@
 
         const username = document.querySelector('#username').value;
         const password = document.querySelector('#password').value;
+
+        console.log(username, password)
 
         const response = await fetch('/fake-login', {
             method: 'POST',
