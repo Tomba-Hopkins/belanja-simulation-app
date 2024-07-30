@@ -34,6 +34,17 @@ const routes = (dir) => [
         handler: getFakeLogin(dir)
     },
     {
+        path: '/fake-dashboard',
+        method: 'GET',
+        handler: (req, h) => {
+            return h.response({
+                username: 'sidu@gmail.com',
+                password: 'sebastengkorak',
+                message: 'for real page🚀 go ahead sir🍛'
+            })
+        }
+    },
+    {
         path: '/login',
         method: 'POST',
         handler: userLogin,
