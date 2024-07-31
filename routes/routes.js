@@ -7,7 +7,8 @@ const {
     userFakeLogin,
     getDashboard,
     robotsTxt,
-    getProfileByID
+    getProfileByID,
+    getNasgor
 } = require('../handlers/handler')
 
 
@@ -89,7 +90,13 @@ const routes = (dir) => [
                 path: './public/img'
             }
         }
+    },
+    {
+        path: '/nasgor-telur-dadar',
+        method: 'GET',
+        handler: getNasgor(dir)
     }
+
     
 ]
 

@@ -162,6 +162,12 @@ const getProfileByID =  async (req, h) => {
     
 }
 
+
+const getNasgor = (dir) => (req, h) => {
+    const filepath = path.join(dir, 'public', 'views', 'nasgor.html')
+    return h.file(filepath)
+}
+
 module.exports = { 
     getRegister, 
     createUser,
@@ -171,5 +177,6 @@ module.exports = {
     userFakeLogin,
     getDashboard,
     robotsTxt,
-    getProfileByID
+    getProfileByID,
+    getNasgor
 }
