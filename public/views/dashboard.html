@@ -10,6 +10,41 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+    <style>
+        .child{
+            animation: scrolling 6s linear infinite;
+        }
+
+        .child img {
+            height: 6rem;
+            margin-right: 2rem;
+        }
+
+        .child img:hover {
+            fill: red;
+        }
+
+        @keyframes scrolling {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media (min-width: 600px) {
+            .child img {
+                height: 10rem;
+                margin-right: 8rem;
+            }
+        }
+
+        
+    </style>
+
 </head>
 <body class="bg-slate-900">
     <nav class="bg-slate-600 w-10 h-10 flex items-center justify-center rounded-full m-4">
@@ -20,18 +55,29 @@
 
 
     <main class="w-full text-center my-6 p-3">
-        <h1 class="text-4xl my-6 font-bold bg-gradient-to-tr from-slate-800 via-slate-400 to-slate-100 text-transparent bg-clip-text">Dashboard</h1>
+        <h1 class="text-4xl md:text-6xl my-6 font-bold bg-gradient-to-tr from-slate-800 via-slate-400 to-slate-100 text-transparent bg-clip-text md:mb-20">Dashboard</h1>
 
-        <div class="my-8 w-full shadow-xl bg-slate-300 p-3 rounded-md border-2 border-slate-500">
-            <h3 class="text-2xl my-3 text-slate-700 font-bold shadow">Made with</h3>
-            <div class="flex overflow-x-hidden gap-3">
-                <img src="../img/docker.svg" alt="">
-                <img src="../img/javascript.svg" alt="">
-                <img src="../img/tailwindcss.svg" alt="">
-                <img src="../img/mongodb.svg" alt="">
-                <img src="../img/hapijs.svg" alt="">
+        <div class="my-8 w-full shadow-xl bg-slate-300 p-3 rounded-md border-2 border-slate-500 flex flex-col">
+            <h3 class="text-2xl h-16 mb-6 text-slate-700 font-bold bg-gradient-to-r from-slate-950 via-gray-600 to-slate-400 text-transparent bg-clip-text shadow md:text-3xl md:m-4">Made with</h3>
+
+            <div class="dad overflow-hidden flex items-center p-3 bg-slate-400 border-4 border-slate-900 rounded-xl">
+                <div class="flex gap-6 md:gap-20 p-1 child flex-shrink-0">
+                    <img class="md:w-1/2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300" src="../img/docker.svg" alt="">
+                    <img class="md:w-1/2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300" src="../img/javascript.svg" alt="">
+                    <img class="md:w-1/2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300" src="../img/tailwindcss.svg" alt="">
+                    <img class="md:w-1/2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300" src="../img/mongodb.svg" alt="">
+                    <img class="md:w-1/2 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300" src="../img/hapijs.svg" alt="">
+                </div>
             </div>
         </div>
+
+      
     </main>
+
+
+    <script>
+        const stack = document.querySelector('.child').cloneNode(true)
+        document.querySelector('.dad').appendChild(stack)
+    </script>
 </body>
 </html>
