@@ -55,7 +55,7 @@
 
 
     <main class="w-full text-center my-6 p-3">
-        <h1 class="text-4xl md:text-6xl my-6 font-bold bg-gradient-to-tr from-slate-800 via-slate-400 to-slate-100 text-transparent bg-clip-text md:mb-20">Dashboard</h1>
+        <h1 class="text-4xl md:text-6xl my-6 font-bold bg-gradient-to-tr from-slate-800 via-slate-400 to-slate-100 text-transparent bg-clip-text md:mb-20 dashboard"></h1>
 
         <div class="my-8 w-full shadow-xl bg-slate-300 p-3 rounded-md border-2 border-slate-500 flex flex-col">
             <h3 class="text-2xl h-16 mb-6 text-slate-700 font-bold bg-gradient-to-r from-slate-200 via-gray-600 to-slate-400 text-transparent bg-clip-text shadow md:text-3xl md:m-4">Made with</h3>
@@ -71,7 +71,6 @@
             </div>
         </div>
 
-      
     </main>
 
     <section class="my-5 p-5">
@@ -92,6 +91,45 @@
     <script>
         const stack = document.querySelector('.child').cloneNode(true)
         document.querySelector('.dad').appendChild(stack)
+
+
+        const abjad = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?.,1234567890 "
+        const words = 'Dashboard'
+        const textNya = document.querySelector('.dashboard')
+
+        let index = 0
+
+        const acak = (target, asli) => {
+            let i = 0
+
+           const interval = setInterval(() => {
+                if (i >= 10){
+                    clearInterval()
+                    target.innerText = asli
+                } else {
+                    target.innerText = abjad[Math.floor(Math.random() * abjad.length)]
+                    i++
+                }
+           }, 20)
+        } 
+
+        const implement = () => {
+
+            if(index < words.length){
+
+                const span = document.createElement('span')
+                textNya.appendChild(span)
+                acak(span, words[index])
+                index++
+                setTimeout(implement, 100)
+                
+            }
+            
+        }
+
+        implement()
+
+        
     </script>
 </body>
 </html>
