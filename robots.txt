@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /nasgor-telur-dadar
-Disallow: /fake-login
-Allow: /
-
-Key: reverse
-Flag: FLAG{toboRriSgalFruoYsIsihT}
