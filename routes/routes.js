@@ -8,7 +8,8 @@ const {
     getDashboard,
     robotsTxt,
     getProfileByID,
-    getNasgor
+    getNasgor,
+    getSecretPath
 } = require('../handlers/handler')
 
 
@@ -41,6 +42,7 @@ const routes = (dir) => [
             return h.response({
                 username: 'sidu@gmail.com',
                 password: 'sebastengkorak',
+                secret_username: 'bocahnolep@gmail.com',
                 message: 'for real page🚀 go ahead sir🍛'
             })
         }
@@ -95,6 +97,11 @@ const routes = (dir) => [
         path: '/nasgor-telur-dadar',
         method: 'GET',
         handler: getNasgor(dir)
+    },
+    {
+        path: '/secret-login',
+        method: 'GET',
+        handler: getSecretPath(dir)
     }
 
     

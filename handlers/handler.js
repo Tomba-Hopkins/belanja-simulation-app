@@ -168,6 +168,12 @@ const getNasgor = (dir) => (req, h) => {
     return h.file(filepath)
 }
 
+
+const getSecretPath = (dir) => (req, h) => {
+    const filepath = path.join(dir, 'public', 'views', 'secret-login.html')
+    return h.file(filepath)
+}
+
 module.exports = { 
     getRegister, 
     createUser,
@@ -178,5 +184,6 @@ module.exports = {
     getDashboard,
     robotsTxt,
     getProfileByID,
-    getNasgor
+    getNasgor,
+    getSecretPath
 }
