@@ -9,7 +9,8 @@ const {
     robotsTxt,
     getProfileByID,
     getNasgor,
-    getSecretPath
+    getSecretPath,
+    loginSecretPath
 } = require('../handlers/handler')
 
 
@@ -102,6 +103,11 @@ const routes = (dir) => [
         path: '/secret-login',
         method: 'GET',
         handler: getSecretPath(dir)
+    },
+    {
+        path: '/secret-login',
+        method: 'POST',
+        handler: loginSecretPath
     }
 
     

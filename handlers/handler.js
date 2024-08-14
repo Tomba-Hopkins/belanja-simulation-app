@@ -174,6 +174,46 @@ const getSecretPath = (dir) => (req, h) => {
     return h.file(filepath)
 }
 
+
+const loginSecretPath =  async (req, h) => {
+
+    const { email, password } = req.payload 
+    console.log(email)
+
+    const db = await connectDB()
+
+    const dbuser = db.collection('user')
+    const user = await dbuser.findOne({
+        username: email
+    })
+
+    
+    // if(!user){
+    //     return h.response({
+    //         message: 'NGAWUR',
+    //         status: 'fail'
+    //     }).statusCode(404)
+    // }
+    
+    console.log(user, password, user.password, cocok)
+    const cocok = password == user.password
+    if(!cocok){
+        return h.response({
+            message: 'NGAWUR',
+            status: 'fail'
+        }).statusCode(404)
+    }
+
+    return h.response({
+        message: 'MANTAP',
+        status: 'success',
+        user,
+        redirect: '/brutal-bet'
+    }).statusCode(200)
+
+    
+}
+
 module.exports = { 
     getRegister, 
     createUser,
@@ -185,5 +225,6 @@ module.exports = {
     robotsTxt,
     getProfileByID,
     getNasgor,
-    getSecretPath
+    getSecretPath,
+    loginSecretPath
 }
