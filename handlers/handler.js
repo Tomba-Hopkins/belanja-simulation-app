@@ -64,14 +64,14 @@ const getFakeLogin = (baseDir) => {
 
 const userLogin = async (req, h) => {
 
-    const { username, password } = req.payload
+    const { email, password } = req.payload
 
     const db = await connectDB()
 
     const dbUser = db.collection('user')
 
     const user = await dbUser.findOne({
-        username: username
+        email: email
     })
 
     
@@ -82,8 +82,9 @@ const userLogin = async (req, h) => {
         }).code(404)
     }
  
-    const matching = password === user.password
-    console.log(password, user.password)
+    const matching = user.password === password && user.email === email
+    console.log(email, password)
+    
     if(!matching){
         return h.response({
             status: 'fail',
@@ -195,14 +196,14 @@ const loginSecretPath =  async (req, h) => {
     //     }).statusCode(404)
     // }
     
-    console.log(user, password, user.password, cocok)
-    const cocok = password == user.password
-    if(!cocok){
-        return h.response({
-            message: 'NGAWUR',
-            status: 'fail'
-        }).statusCode(404)
-    }
+    console.log(user, password)
+    // const cocok = password == user.password
+    // if(!cocok){
+    //     return h.response({
+    //         message: 'NGAWUR',
+    //         status: 'fail'
+    //     }).statusCode(404)
+    // }
 
     return h.response({
         message: 'MANTAP',
