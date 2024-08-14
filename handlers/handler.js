@@ -185,32 +185,33 @@ const loginSecretPath =  async (req, h) => {
 
     const dbuser = db.collection('user')
     const user = await dbuser.findOne({
-        username: email
+        email: email
     })
 
     
-    // if(!user){
-    //     return h.response({
-    //         message: 'NGAWUR',
-    //         status: 'fail'
-    //     }).statusCode(404)
-    // }
+    if(!user){
+        return h.response({
+            message: 'NGAWUR',
+            status: 'fail'
+        }).code(404)
+    }
     
-    console.log(user, password)
-    // const cocok = password == user.password
-    // if(!cocok){
-    //     return h.response({
-    //         message: 'NGAWUR',
-    //         status: 'fail'
-    //     }).statusCode(404)
-    // }
+    console.log(email, password)
+    console.log(user.email, user.password)
+    const cocok = email === user.email && password === user.password
+    if(!cocok){
+        return h.response({
+            message: 'NGAWUR',
+            status: 'fail'
+        }).code(404)
+    }
 
     return h.response({
         message: 'MANTAP',
         status: 'success',
-        user,
+        // user,
         redirect: '/brutal-bet'
-    }).statusCode(200)
+    }).code(200)
 
     
 }
