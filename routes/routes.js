@@ -10,7 +10,8 @@ const {
     getProfileByID,
     getNasgor,
     getSecretPath,
-    loginSecretPath
+    loginSecretPath,
+    getFlagSecretPath
 } = require('../handlers/handler')
 
 
@@ -112,6 +113,7 @@ const routes = (dir) => [
     {
         path: '/brutal-bet',
         method: 'GET',
+        handler: getFlagSecretPath
     }
 
     

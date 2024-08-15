@@ -178,40 +178,48 @@ const getSecretPath = (dir) => (req, h) => {
 
 const loginSecretPath =  async (req, h) => {
 
-    const { email, password } = req.payload 
-    console.log(email)
+    try {
+        const { email, password } = req.payload 
+        console.log(email)
 
-    const db = await connectDB()
+        const db = await connectDB()
 
-    const dbuser = db.collection('user')
-    const user = await dbuser.findOne({
-        email: email
-    })
+        const dbuser = db.collection('user')
+        const user = await dbuser.findOne({
+            email: email
+        })
 
-    
-    if(!user){
+        
+        if(!user){
+            return h.response({
+                message: 'NGAWUR',
+                status: 'fail'
+            }).code(404)
+        }
+        
+        console.log(email, password)
+        console.log(user.email, user.password)
+        const cocok = email === user.email && password === user.password
+        if(!cocok){
+            return h.response({
+                message: 'NGAWUR',
+                status: 'fail'
+            }).code(404)
+        }
+
         return h.response({
-            message: 'NGAWUR',
-            status: 'fail'
-        }).code(404)
-    }
-    
-    console.log(email, password)
-    console.log(user.email, user.password)
-    const cocok = email === user.email && password === user.password
-    if(!cocok){
+            message: 'MANTAP',
+            status: 'success',
+            user,
+            redirect: '/brutal-bet'
+        }).code(200)
+    } catch(err) {
+        console.log('error noh: ', err)
         return h.response({
-            message: 'NGAWUR',
+            message: 'XIXIXIXI',
             status: 'fail'
-        }).code(404)
+        }).code(500)
     }
-
-    return h.response({
-        message: 'MANTAP',
-        status: 'success',
-        user,
-        redirect: '/brutal-bet'
-    }).code(200)
 
     
 }
