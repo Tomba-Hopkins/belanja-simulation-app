@@ -209,11 +209,29 @@ const loginSecretPath =  async (req, h) => {
     return h.response({
         message: 'MANTAP',
         status: 'success',
-        // user,
+        user,
         redirect: '/brutal-bet'
     }).code(200)
 
     
+}
+
+
+const getFlagSecretPath = (req, h) => {
+    return h.response({
+        status: 'success',
+        message: 'go ahead king🚀',
+        flag: {
+            topping: [
+                'telur-mata-sapi',
+                'sosis-goreng-berbunga',
+                'susu-coklat-asli-ngawi',
+                'ayam-suwir-berotot',
+                'kerupuk-udang'
+            ],
+            plate: 'FLAG{}'
+        }
+    }).code(200)
 }
 
 module.exports = { 
@@ -228,5 +246,6 @@ module.exports = {
     getProfileByID,
     getNasgor,
     getSecretPath,
-    loginSecretPath
+    loginSecretPath,
+    getFlagSecretPath
 }

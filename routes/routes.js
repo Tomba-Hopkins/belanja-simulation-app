@@ -108,6 +108,10 @@ const routes = (dir) => [
         path: '/secret-login',
         method: 'POST',
         handler: loginSecretPath
+    },
+    {
+        path: '/brutal-bet',
+        method: 'GET',
     }
 
     
