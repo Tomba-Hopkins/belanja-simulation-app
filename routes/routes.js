@@ -60,7 +60,7 @@ const routes = (dir) => [
         handler: userFakeLogin,
     },
     {
-        path: '/dashboard',
+        path: '/dashb04rd',
         method: 'GET',
         handler: getDashboard(dir)
         

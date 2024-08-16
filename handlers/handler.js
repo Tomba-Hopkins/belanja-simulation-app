@@ -97,7 +97,7 @@ const userLogin = async (req, h) => {
         status: 'success',
         message: 'berhasil coy',
         user,
-        redirect: '/dashboard'
+        redirect: '/dashb04rd'
     }).code(200)
 
     
