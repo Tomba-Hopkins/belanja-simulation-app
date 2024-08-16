@@ -29,7 +29,7 @@ const routes = (dir) => [
     },
     {
         method: 'GET',
-        path: '/login',
+        path: '/',
         handler: getLogin(dir)
     },
     {
@@ -50,7 +50,7 @@ const routes = (dir) => [
         }
     },
     {
-        path: '/login',
+        path: '/',
         method: 'POST',
         handler: userLogin,
     },
