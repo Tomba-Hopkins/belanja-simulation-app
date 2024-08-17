@@ -19,11 +19,11 @@ const {
 const routes = (dir) => [
     {
         method: 'GET',
-        path: '/register',
+        path: '/regist4r',
         handler: getRegister(dir)
     },
     {
-        path: '/register',
+        path: '/regist4r',
         method: 'POST',
         handler: createUser
     },
