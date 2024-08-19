@@ -5,11 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit flag</title>
     <link rel="stylesheet" href="../style/output.css">
+
+    <style>
+        img {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            z-index: -1;
+        }
+        main {
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <form method="post">
-        <input type="text">
-        <button type="submit">Submit</button>
-    </form>
+
+    <img src="../img/liminal2.jpg" class="object-cover" alt="pict">
+
+    <main class="flex flex-col justify-center items-center p-4">
+        <h1 class="text-4xl md:text-7xl font-semibold text-center  bg-gradient-to-r from-slate-700 to-slate-300 text-transparent bg-clip-text py-8 shadow-xl">Submit Flag</h1>
+    
+        <form method="post" class="bg-slate-200/30 flex flex-col justify-center items-center md:w-1/2 w-full md:h-1/2 h-1/3 p-2 mt-5 rounded-md backdrop-blur-md">
+            <label for="flag" class="font-semibold">Add Flag</label>
+            <input type="text" id="flag" class="bg-gradient-to-br from-slate-800 to-slate-500 rounded-sm w-1/2 border-2 border-slate-400 focus:ring-red-500 ring-2 p-1 my-4 md:my-8 text-slate-200 font-mono">
+            <button type="submit">Submit</button>
+        </form>
+    </main>
 </body>
 </html>
