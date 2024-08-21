@@ -114,6 +114,10 @@ const routes = (dir) => [
         path: '/brutal-bet',
         method: 'GET',
         handler: getFlagSecretPath
+    },
+    {
+        path: '/flag',
+        method: 'GET',
     }
 
     
