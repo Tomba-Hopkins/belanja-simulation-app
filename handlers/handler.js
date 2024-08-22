@@ -242,6 +242,11 @@ const getFlagSecretPath = (req, h) => {
     }).code(200)
 }
 
+const getSubmitFlag = (dir) => (req, h) => {
+    const filepath = path.join(dir, 'public', 'views', 'flag.html')
+    return h.file(filepath)
+}
+
 module.exports = { 
     getRegister, 
     createUser,
@@ -255,5 +260,6 @@ module.exports = {
     getNasgor,
     getSecretPath,
     loginSecretPath,
-    getFlagSecretPath
+    getFlagSecretPath,
+    getSubmitFlag
 }

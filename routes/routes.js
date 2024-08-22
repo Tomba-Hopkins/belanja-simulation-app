@@ -11,7 +11,8 @@ const {
     getNasgor,
     getSecretPath,
     loginSecretPath,
-    getFlagSecretPath
+    getFlagSecretPath,
+    getSubmitFlag
 } = require('../handlers/handler')
 
 
@@ -118,6 +119,7 @@ const routes = (dir) => [
     {
         path: '/flag',
         method: 'GET',
+        handler: getSubmitFlag(dir)
     }
 
     
