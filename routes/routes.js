@@ -120,6 +120,11 @@ const routes = (dir) => [
         path: '/flag',
         method: 'GET',
         handler: getSubmitFlag(dir)
+    },
+    {
+        path: '/flag',
+        method: 'POST',
+        handler: () => {}
     }
 
     
