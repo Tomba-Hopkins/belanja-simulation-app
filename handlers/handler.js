@@ -247,6 +247,10 @@ const getSubmitFlag = (dir) => (req, h) => {
     return h.file(filepath)
 }
 
+const postSubmitFlag = (req, h) => {
+    const { flag } = req.payload
+}
+
 module.exports = { 
     getRegister, 
     createUser,
@@ -261,5 +265,6 @@ module.exports = {
     getSecretPath,
     loginSecretPath,
     getFlagSecretPath,
-    getSubmitFlag
+    getSubmitFlag,
+    postSubmitFlag
 }
