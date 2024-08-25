@@ -247,8 +247,12 @@ const getSubmitFlag = (dir) => (req, h) => {
     return h.file(filepath)
 }
 
-const postSubmitFlag = (req, h) => {
+const postSubmitFlag = async (req, h) => {
     const { flag } = req.payload
+
+    const db = await connectDB()
+    const dbFlag = db.collection('flag')
+
 }
 
 module.exports = { 
