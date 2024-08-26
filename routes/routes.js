@@ -89,6 +89,15 @@ const routes = (dir) => [
     },
     {
         method: 'GET',
+        path: '/script/{file*}',
+        handler: {
+            directory: {
+                path: './public/script'
+            }
+        }
+    },
+    {
+        method: 'GET',
         path: '/img/{file*}',
         handler: {
             directory: {
