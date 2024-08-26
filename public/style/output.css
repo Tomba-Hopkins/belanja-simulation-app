@@ -558,44 +558,12 @@ video {
   position: absolute;
 }
 
-.left-0 {
-  left: 0px;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
-.left-5 {
-  left: 1.25rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
 .left-20 {
   left: 5rem;
 }
 
-.top-80 {
-  top: 20rem;
-}
-
-.top-40 {
-  top: 10rem;
-}
-
-.top-20 {
-  top: 5rem;
+.top-10 {
+  top: 2.5rem;
 }
 
 .m-4 {
@@ -846,6 +814,10 @@ video {
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 
+.bg-slate-200\/20 {
+  background-color: rgb(226 232 240 / 0.2);
+}
+
 .bg-slate-200\/30 {
   background-color: rgb(226 232 240 / 0.3);
 }
@@ -890,37 +862,9 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-blue-300 {
+.bg-slate-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
-}
-
-.bg-blue-300\/30 {
-  background-color: rgb(147 197 253 / 0.3);
-}
-
-.bg-blue-300\/10 {
-  background-color: rgb(147 197 253 / 0.1);
-}
-
-.bg-blue-300\/50 {
-  background-color: rgb(147 197 253 / 0.5);
-}
-
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-slate-200\/50 {
-  background-color: rgb(226 232 240 / 0.5);
-}
-
-.bg-slate-200\/40 {
-  background-color: rgb(226 232 240 / 0.4);
-}
-
-.bg-slate-200\/20 {
-  background-color: rgb(226 232 240 / 0.2);
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-br {
@@ -978,6 +922,24 @@ video {
 .from-slate-950 {
   --tw-gradient-from: #020617 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(2 6 23 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-slate-600 {
+  --tw-gradient-from: #475569 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(71 85 105 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-slate-300 {
+  --tw-gradient-from: #cbd5e1 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(203 213 225 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-slate-500 {
+  --tw-gradient-from: #64748b var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(100 116 139 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
