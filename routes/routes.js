@@ -12,7 +12,8 @@ const {
     getSecretPath,
     loginSecretPath,
     getFlagSecretPath,
-    getSubmitFlag
+    getSubmitFlag,
+    postSubmitFlag
 } = require('../handlers/handler')
 
 
@@ -133,7 +134,7 @@ const routes = (dir) => [
     {
         path: '/flag',
         method: 'POST',
-        handler: () => {}
+        handler: postSubmitFlag
     }
 
     

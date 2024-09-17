@@ -1,10 +1,12 @@
 const flagg = document.querySelector('.flag')
 const form = document.querySelector('#flag-form')
+const plus = document.querySelector('.plus')
+console.log(1)
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
-    const flagVal = flagg.value
+    const flagVal = document.querySelector('#flag').value
 
     const response = await fetch('/flag', {
         method: 'POST',
@@ -16,10 +18,11 @@ form.addEventListener('submit', async (e) => {
         })
     })
 
-    const result = response.json()
+    const result = await response.json()
 
     if(response.ok) {
         flagg.textContent = result.score
+        alert(result.message)
     } else {
         alert(result.message)
     }

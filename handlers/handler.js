@@ -253,10 +253,16 @@ const getSubmitFlag = (dir) => (req, h) => {
 const postSubmitFlag = async (req, h) => {
     const { flag } = req.payload
 
+    console.log(flag)
+
     try {
         const db = await connectDB()
         const coll = db.collection('flag')
-        const valid = await coll.findOne({ flag })
+        const valid = await coll.findOne({
+            name: flag
+        })
+
+        console.log(valid)
 
         if(valid) {
             score += 100
