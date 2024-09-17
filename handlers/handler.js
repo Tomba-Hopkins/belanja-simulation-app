@@ -242,6 +242,9 @@ const getFlagSecretPath = (req, h) => {
     }).code(200)
 }
 
+
+let score = 0
+
 const getSubmitFlag = (dir) => (req, h) => {
     const filepath = path.join(dir, 'public', 'views', 'flag.html')
     return h.file(filepath)
@@ -250,9 +253,29 @@ const getSubmitFlag = (dir) => (req, h) => {
 const postSubmitFlag = async (req, h) => {
     const { flag } = req.payload
 
-    const db = await connectDB()
-    const dbFlag = db.collection('flag')
+    try {
+        const db = await connectDB()
+        const coll = db.collection('flag')
+        const valid = await coll.findOne({ flag })
 
+        if(valid) {
+            score += 100
+            return h.response({
+                message: 'Greatt',
+                score
+            }).code(200)
+        } else {
+            return h.response({
+                message: 'Incorrect!',
+                score
+            }).code(404)
+        }
+    } catch(err) {
+        return h.response({
+            message: 'Error',
+            score
+        }).code(500)
+    }
 }
 
 module.exports = { 
