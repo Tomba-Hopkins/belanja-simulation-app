@@ -7,7 +7,7 @@ const routes = buatRoutes(__dirname)
 const init = async () => {
 
     const server = Hapi.server({
-        host: '0.0.0.0',
+        host: 'localhost',
         port: process.env.PORT || 5000
     })
 
