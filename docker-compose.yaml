@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+
+  mongo:
+    image: mongo:5.0
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'belanja-simulation-app_mongo-data:/data/db'
+      - './db:/data/backup'
+    networks:
+      - sebusnet
+
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: myctf-lab
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: mongodb://mongo:27017/belanja-app
+    volumes:
+      - .:/app
+    networks:
+      - sebusnet
+
+
+
+volumes:
+  belanja-simulation-app_mongo-data:
+    driver: local
+
+networks:
+  sebusnet:
+    driver: bridge
+    
