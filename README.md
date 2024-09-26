@@ -5,12 +5,16 @@
 ``` bash
 docker pull hopkinserstomba/mylab-nasgor-edition
 ```
+<br>
+<br>
 
 2. git clone
 
 ``` bash
 git clone https://github.com/Tomba-Hopkins/my-ctf-lab1.git
 ```
+<br>
+<br>
 
 
 3. cd dir
@@ -18,18 +22,29 @@ git clone https://github.com/Tomba-Hopkins/my-ctf-lab1.git
 ``` bash
 cd my-ctf-lab1
 ```
+<br>
+<br>
+
 
 4. docker-compose
 
 ``` bash
 docker-compose up
 ```
+or
+``` bash
+docker compose up
+```
+<br>
+<br>
 
 5. open browser
 
 ``` bash
 http://localhost:5000
 ```
+<br>
+<br>
 
 6. enjoy 🦖
 
