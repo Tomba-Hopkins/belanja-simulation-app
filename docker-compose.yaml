@@ -14,7 +14,7 @@ services:
       sh -c "mongod --fork --logpath /var/log/mongodb.log --dbpath /data/db &&
         mongorestore --drop /data/backup &&
         mongod --shutdown &&
-        mongod --dbpath /data/db --bind_ip_al"
+        mongod --dbpath /data/db --bind_ip_all"
 
 
   app:
