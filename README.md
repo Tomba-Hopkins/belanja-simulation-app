@@ -26,7 +26,19 @@ cd my-ctf-lab1
 <br>
 
 
-4. docker-compose
+4. docker-compose build
+
+``` bash
+docker-compose build
+```
+or
+``` bash
+docker compose build
+```
+<br>
+<br>
+
+5. docker-compose
 
 ``` bash
 docker-compose up
@@ -38,7 +50,7 @@ docker compose up
 <br>
 <br>
 
-5. open browser
+6. open browser
 
 ``` bash
 http://localhost:5000
