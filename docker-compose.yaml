@@ -23,6 +23,8 @@ services:
       - mongo
     environment:
       MONGO_URL: mongodb://mongo:27017/belanja-app
+    command: >
+      sh -c "npm install && npm start"
     volumes:
       - .:/app
     networks:
