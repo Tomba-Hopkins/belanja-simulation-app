@@ -54,32 +54,9 @@ docker pull hopkinserstomba/mylab-nasgor-edition
 <br>
 <br>
 
-2. docker pull mongo
-
+2. docker run app
 ``` bash
-docker pull mongo:5.0
-```
-or
-``` bash
-docker pull mongo:4.4
-```
-<br>
-<br>
-
-3. docker run mongo 
-``` bash
-docker run -d --name mongo -p 27017:27017 -v mongodata:/data/db mongo:5.0
-```
-or 
-``` bash
-docker run -d --name mongo -p 27017:27017 -v mongodata:/data/db mongo:4.4
-```
-<br>
-<br>
-
-4. docker run app
-``` bash
-docker run -p 5000:5000 --env MONGO_URL="mongodb://mongo:27017/belanja-app" --link mongo:mongo hopkinserstomba/mylab-nasgor-edition
+docker run -p 5000:5000 -p 27017:27017 hopkinserstomba/mylab-nasgor-edition
 
 ```
 <br>
