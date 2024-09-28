@@ -1,14 +1,6 @@
-## Setup with Docker :
+## Setup with Docker compose :
 
-1. docker pull 
-
-``` bash
-docker pull hopkinserstomba/mylab-nasgor-edition
-```
-<br>
-<br>
-
-2. git clone
+1. git clone
 
 ``` bash
 git clone https://github.com/Tomba-Hopkins/my-ctf-lab1.git
@@ -17,7 +9,7 @@ git clone https://github.com/Tomba-Hopkins/my-ctf-lab1.git
 <br>
 
 
-3. cd dir
+2. cd dir
 
 ``` bash
 cd my-ctf-lab1
@@ -26,15 +18,16 @@ cd my-ctf-lab1
 <br>
 
 
-4. docker-compose up
+3. docker-compose up
 
-``` bash
-docker-compose up
-```
-or
 ``` bash
 docker compose up
 ```
+or
+``` bash
+docker-compose up
+```
+
 <br>
 <br>
 
@@ -48,6 +41,49 @@ http://localhost:5000
 
 6. enjoy 🦖
 
+<br>
+<br>
+<br>
+<br>
+
+## Setup with docker hub
+1. docker pull app
+``` bash
+docker pull hopkinserstomba/mylab-nasgor-edition
+```
+<br>
+<br>
+
+2. docker pull mongo
+
+``` bash
+docker pull mongo:5.0
+```
+or
+``` bash
+docker pull mongo:4.4
+```
+<br>
+<br>
+
+3. docker run mongo 
+``` bash
+docker run -d --name mongo -p 27017:27017 -v mongodata:/data/db mongo:5.0
+```
+or 
+``` bash
+docker run -d --name mongo -p 27017:27017 -v mongodata:/data/db mongo:4.4
+```
+<br>
+<br>
+
+4. docker run app
+``` bash
+docker run -p 5000:5000 --env MONGO_URL="mongodb://mongo:27017/belanja-app" --link mongo:mongo hopkinserstomba/mylab-nasgor-edition
+
+```
+<br>
+<br>
 
 ### note
 - i think there is a lot of bug in my app, sorry about that.
