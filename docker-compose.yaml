@@ -21,7 +21,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: myctf-lab
+    image: hopkinserstomba/mylab-nasgor-edition
     ports:
       - '5000:5000'
     depends_on:
